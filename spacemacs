@@ -301,16 +301,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;;         ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
   (setq configuration-layer--elpa-archives
-       '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
-               ("org-cn"   . "http://elpa.zilongshanren.com/org/")
-                     ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+        '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
+          ("org-cn"   . "http://elpa.zilongshanren.com/org/")
+          ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
 
   (setq-default dotspacemacs-themes '(spacemacs-light spacemacs-dark solarize-dark leuven zenburn))
   ;;(push "/usr/local/share/emacs/site-lisp/rtags" load-path)
   
   (setq ycmd-server-command '("python" "/home/suteng/ycmd/ycmd"))
   (setq ycmd-force-semantic-completion t)
-  (global-linum-mode 1)
 
   )
 
@@ -323,7 +322,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   (setq linum-format "%d ")
-  ;;(spacemacs/toggle-line-numbers-on t)
+  ;;(global-linum-mode 1)
+  (spacemacs/toggle-highlight-current-line-globally-off)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
