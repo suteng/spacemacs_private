@@ -117,41 +117,40 @@
 (defun c++/post-init-company-ycmd ()
   (push 'company-ycmd company-backends-c-mode-common))
 
-;; (defun c++/init-rtags ()
-;;      (use-package rtags
-;;             :if c++-enable-rtags-support))
 
 (defun rtags-evil-standard-keybindings (mode)
   (evil-leader/set-key-for-mode mode
-    "mR." 'rtags-find-symbol-at-point
-    "mR," 'rtags-find-references-at-point
-    "mRv" 'rtags-find-virtuals-at-point
-    "mRV" 'rtags-print-enum-value-at-point
-    "mR/" 'rtags-find-all-references-at-point
-    "mRY" 'rtags-cycle-overlays-on-screen
-    "mR>" 'rtags-find-symbol
-    "mR<" 'rtags-find-references
-    "mR[" 'rtags-location-stack-back
-    "mR]" 'rtags-location-stack-forward
-    "mRD" 'rtags-diagnostics
-    "mRG" 'rtags-guess-function-at-point
-    "mRp" 'rtags-set-current-project
-    "mRP" 'rtags-print-dependencies
-    "mRe" 'rtags-reparse-file
-    "mRE" 'rtags-preprocess-file
-    "mRR" 'rtags-rename-symbol
-    "mRM" 'rtags-symbol-info
-    "mRS" 'rtags-display-summary
-    "mRO" 'rtags-goto-offset
-    "mR;" 'rtags-find-file
-    "mRF" 'rtags-fixit
-    "mRL" 'rtags-copy-and-print-current-location
-    "mRX" 'rtags-fix-fixit-at-point
-    "mRB" 'rtags-show-rtags-buffer
-    "mRI" 'rtags-imenu
-    "mRT" 'rtags-taglist
-    "mRh" 'rtags-print-class-hierarchy
-    "mRa" 'rtags-print-source-arguments
+    "r." 'rtags-find-symbol-at-point
+    "r," 'rtags-find-references-at-point
+    "rv" 'rtags-find-virtuals-at-point
+    "rV" 'rtags-print-enum-value-at-point
+    "r/" 'rtags-find-all-references-at-point
+    "rY" 'rtags-cycle-overlays-on-screen
+    "r>" 'rtags-find-symbol
+    "r<" 'rtags-find-references
+    "r[" 'rtags-location-stack-back
+    "r]" 'rtags-location-stack-forward
+    "rD" 'rtags-diagnostics
+    "rG" 'rtags-guess-function-at-point
+    "rp" 'rtags-set-current-project
+    "rP" 'rtags-print-dependencies
+    "re" 'rtags-reparse-file
+    "rE" 'rtags-preprocess-file
+    "rR" 'rtags-rename-symbol
+    "rM" 'rtags-symbol-info
+    "rS" 'rtags-display-summary
+    "rO" 'rtags-goto-offset
+    "r;" 'rtags-find-file
+    "rF" 'rtags-fixit
+    "rL" 'rtags-copy-and-print-current-location
+    "rX" 'rtags-fix-fixit-at-point
+    "rB" 'rtags-show-rtags-buffer
+    "rI" 'rtags-imenu
+    "rT" 'rtags-taglist
+    "rh" 'rtags-print-class-hierarchy
+    "ra" 'rtags-print-source-arguments
+    "rn" 'rtags-next-match
+    "rN" 'rtags-previous-match
     )
   )
 
@@ -169,6 +168,8 @@
       (define-key evil-normal-state-map (kbd "RET") 'rtags-select-other-window)
       (define-key evil-normal-state-map (kbd "M-RET") 'rtags-select)
       (define-key evil-normal-state-map (kbd "q") 'rtags-bury-or-delete)
+      (define-key evil-normal-state-map (kbd "M-n") 'rtags-next-match)
+      (define-key evil-normal-state-map (kbd "M-N") 'rtags-previous-match)
 
       (rtags-evil-standard-keybindings 'c-mode)
       (rtags-evil-standard-keybindings 'c++-mode)
