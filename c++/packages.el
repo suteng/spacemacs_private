@@ -120,11 +120,11 @@
 
 (defun rtags-evil-standard-keybindings (mode)
   (evil-leader/set-key-for-mode mode
-    "r." 'rtags-find-symbol-at-point
-    "r," 'rtags-find-references-at-point
+    "rs" 'rtags-find-symbol-at-point
+    "rr" 'rtags-find-references-at-point
     "rv" 'rtags-find-virtuals-at-point
-    "rV" 'rtags-print-enum-value-at-point
-    "r/" 'rtags-find-all-references-at-point
+    "re" 'rtags-print-enum-value-at-point
+    "rr" 'rtags-find-all-references-at-point
     "rY" 'rtags-cycle-overlays-on-screen
     "r>" 'rtags-find-symbol
     "r<" 'rtags-find-references
@@ -134,7 +134,7 @@
     "rG" 'rtags-guess-function-at-point
     "rp" 'rtags-set-current-project
     "rP" 'rtags-print-dependencies
-    "re" 'rtags-reparse-file
+    "rp" 'rtags-reparse-file
     "rE" 'rtags-preprocess-file
     "rR" 'rtags-rename-symbol
     "rM" 'rtags-symbol-info
